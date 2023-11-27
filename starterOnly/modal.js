@@ -56,3 +56,12 @@ const closeModalInput = () => {
 };
 // Close modal event
 modalCLoseButton.addEventListener('click', closeModal);
+
+// Close modal Validation
+modalCloseButtonValidation.addEventListener('click', closeModalValidation);
+modalCloseInputValidation.addEventListener('click', closeModalInput);
+
+// Send confirmation form is OK
+const launchModalValidation = () => {
+	bgroundValidation.style.display = 'block';
+};
