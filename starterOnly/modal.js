@@ -129,3 +129,35 @@ const validateFieldCheckbox1 = (checkbox, errorElement, errorMessage) => {
 		errorElement.textContent = '';
 	}
 };
+// Appel de chaque fonction lors du Submit du formulaire
+const form = document.querySelector('form');
+form.addEventListener('submit', event => {
+	// On empêche le comportement par défaut / recharger la page
+	event.preventDefault();
+	validateFieldRegex(
+		firstName,
+		firstNameError,
+		errorMessages.firstName,
+		regexName
+	);
+	validateFieldRegex(
+		lastName,
+		lastNameError,
+		errorMessages.lastName,
+		regexName
+	);
+	validateFieldBirhDate(birthDate, birthDateError, errorMessages.birthDate);
+	validateFieldRegex(email, emailError, errorMessages.email, regexMail);
+	validateFieldRegex(
+		tournament,
+		tournamentNumberError,
+		errorMessages.tournamentNumber,
+		regexTournament
+	);
+	validateRadioInputCity(
+		radioInputCity,
+		radioInputCityError,
+		errorMessages.city
+	);
+	validateFieldCheckbox1(checkbox1, checkbox1Error, errorMessages.checkbox1);
+});
