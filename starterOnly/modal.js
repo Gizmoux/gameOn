@@ -160,4 +160,18 @@ form.addEventListener('submit', event => {
 		errorMessages.city
 	);
 	validateFieldCheckbox1(checkbox1, checkbox1Error, errorMessages.checkbox1);
+	// Conditions to launch closeModal
+	if (
+		!firstNameError.textContent &&
+		!lastNameError.textContent &&
+		!birthDateError.textContent &&
+		!emailError.textContent &&
+		!tournamentNumberError.textContent &&
+		!radioInputCityError.textContent &&
+		!checkbox1Error.textContent
+	) {
+		// Afficher l'alerte Votre réservation a été reçue.
+		closeModal();
+		launchModalValidation();
+	}
 });
