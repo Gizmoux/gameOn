@@ -82,3 +82,50 @@ const errorMessages = {
 let regexMail = new RegExp('[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+');
 let regexTournament = new RegExp('^(?:[0-9]|[1-9][0-9])$');
 let regexName = new RegExp('^[a-zA-Zéë-]{2,}$');
+
+/**********************FUNCTIONS********************/
+/*****************Form functionnalities****************/
+// Function for empty field or <2 caracters
+
+const validateFieldBirhDate = (field, errorElement, errorMessage) => {
+	let birthDateUser = new Date(field.value);
+	let currentDate = new Date();
+	let ageUser = currentDate.getFullYear() - birthDateUser.getFullYear();
+	if (ageUser < 16) {
+		errorElement.textContent = errorMessage;
+	} else {
+		errorElement.textContent = '';
+	}
+};
+
+// Function for Regex validation
+const validateFieldRegex = (field, errorElement, errorMessage, regex) => {
+	if (!regex.test(field.value)) {
+		errorElement.textContent = errorMessage;
+	} else {
+		errorElement.textContent = '';
+	}
+};
+
+// Function for radioInput
+const validateRadioInputCity = (radioInputCity, errorElement, errorMessage) => {
+	let isChecked = false;
+	for (let i = 0; i < radioInputCity.length; i++) {
+		if (radioInputCity[i].checked) {
+			isChecked = true;
+			break;
+		}
+	}
+	if (!isChecked) {
+		errorElement.textContent = errorMessage;
+	} else {
+		errorElement.textContent = '';
+	}
+};
+const validateFieldCheckbox1 = (checkbox, errorElement, errorMessage) => {
+	if (!checkbox.checked) {
+		errorElement.textContent = errorMessage;
+	} else {
+		errorElement.textContent = '';
+	}
+};
