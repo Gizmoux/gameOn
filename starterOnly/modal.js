@@ -42,3 +42,17 @@ modalBtn.forEach(btn => btn.addEventListener('click', launchModal));
 function launchModal() {
 	modalbg.style.display = 'block';
 }
+// Close modal form
+const closeModal = () => {
+	modalbg.style.display = 'none';
+};
+// Close modal validation
+const closeModalValidation = () => {
+	bgroundValidation.style.display = 'none';
+};
+// Close modal input
+const closeModalInput = () => {
+	bgroundValidation.style.display = 'none';
+};
+// Close modal event
+modalCLoseButton.addEventListener('click', closeModal);
