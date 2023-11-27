@@ -65,3 +65,16 @@ modalCloseInputValidation.addEventListener('click', closeModalInput);
 const launchModalValidation = () => {
 	bgroundValidation.style.display = 'block';
 };
+// 	Objet des strings à afficher en cas d'erreur
+const errorMessages = {
+	firstName:
+		'Veuillez entrer 2 caractères alphabétiques ou plus pour le champ du Prénom.',
+	lastName:
+		'Veuillez entrer 2 caractères alphabétiques ou plus pour le champ du Nom.',
+	email: 'Veuillez entrer un email correct',
+	birthDate:
+		'Vous devez entrer votre date de naissance et avoir 16 ans minimum.',
+	tournamentNumber: 'Veuillez indiquer le nombre de tournois participés',
+	city: 'Vous devez choisir une option.',
+	checkbox1: 'Vous devez vérifier que vous acceptez les termes et conditions.',
+};
