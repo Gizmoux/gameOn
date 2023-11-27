@@ -78,3 +78,7 @@ const errorMessages = {
 	city: 'Vous devez choisir une option.',
 	checkbox1: 'Vous devez vérifier que vous acceptez les termes et conditions.',
 };
+// Regular Expression
+let regexMail = new RegExp('[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+');
+let regexTournament = new RegExp('^(?:[0-9]|[1-9][0-9])$');
+let regexName = new RegExp('^[a-zA-Zéë-]{2,}$');
