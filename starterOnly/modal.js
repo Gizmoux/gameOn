@@ -26,6 +26,15 @@ const bgroundValidation = document.querySelector('.bground-validation');
 // const radioInputCity = document.getElementsByName('location');
 // const bgroundValidation = document.getElementById('bground-validation');
 
+// DOM Error Elements
+const firstNameError = document.getElementById('firstNameError');
+const lastNameError = document.getElementById('lastNameError');
+const emailError = document.getElementById('emailError');
+const birthDateError = document.getElementById('birthDateError');
+const tournamentNumberError = document.getElementById('tournamentNumberError');
+const radioInputCityError = document.getElementById('radioInputCityError');
+const checkbox1Error = document.getElementById('checkbox1Error');
+
 // launch modal event
 modalBtn.forEach(btn => btn.addEventListener('click', launchModal));
 
