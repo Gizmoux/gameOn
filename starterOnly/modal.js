@@ -11,6 +11,20 @@ function editNav() {
 const modalbg = document.querySelector('.bground');
 const modalBtn = document.querySelectorAll('.modal-btn');
 const formData = document.querySelectorAll('.formData');
+const modalCLoseButton = document.querySelector('.close');
+const modalCloseButtonValidation = document.getElementById('closeButton');
+const modalCloseInputValidation = document.getElementById('inputButton');
+const buttonSubmit = document.querySelector('.btn-submit');
+const firstName = document.getElementById('firstName');
+const lastName = document.getElementById('lastName');
+const email = document.getElementById('email');
+const tournament = document.getElementById('tournamentNumber');
+const checkbox1 = document.getElementById('checkbox1');
+let radioInputCity = document.querySelectorAll('input[name="location"]');
+const birthDate = document.getElementById('birthDate');
+const bgroundValidation = document.querySelector('.bground-validation');
+// const radioInputCity = document.getElementsByName('location');
+// const bgroundValidation = document.getElementById('bground-validation');
 
 // launch modal event
 modalBtn.forEach(btn => btn.addEventListener('click', launchModal));
