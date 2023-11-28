@@ -45,6 +45,7 @@ function launchModal() {
 // Close modal form
 const closeModal = () => {
 	modalbg.style.display = 'none';
+	window.location.reload();
 };
 // Close modal validation
 const closeModalValidation = () => {
@@ -93,6 +94,7 @@ const validateFieldBirhDate = (field, errorElement, errorMessage) => {
 	let ageUser = currentDate.getFullYear() - birthDateUser.getFullYear();
 	if (ageUser < 16) {
 		errorElement.textContent = errorMessage;
+		field.style.border = '2px solid #FB4D60';
 	} else {
 		errorElement.textContent = '';
 	}
@@ -102,6 +104,7 @@ const validateFieldBirhDate = (field, errorElement, errorMessage) => {
 const validateFieldRegex = (field, errorElement, errorMessage, regex) => {
 	if (!regex.test(field.value)) {
 		errorElement.textContent = errorMessage;
+		field.style.border = '2px solid #FB4D60';
 	} else {
 		errorElement.textContent = '';
 	}
