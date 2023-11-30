@@ -45,7 +45,6 @@ function launchModal() {
 // Close modal form
 const closeModal = () => {
 	modalbg.style.display = 'none';
-	window.location.reload();
 };
 // Close modal validation
 const closeModalValidation = () => {
@@ -54,6 +53,7 @@ const closeModalValidation = () => {
 // Close modal input
 const closeModalInput = () => {
 	bgroundValidation.style.display = 'none';
+	window.location.reload();
 };
 // Close modal event
 modalCLoseButton.addEventListener('click', closeModal);
