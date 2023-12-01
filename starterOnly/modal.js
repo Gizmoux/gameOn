@@ -66,7 +66,7 @@ modalCloseInputValidation.addEventListener('click', closeModalInput);
 const launchModalValidation = () => {
 	bgroundValidation.style.display = 'block';
 };
-// 	Objet des strings à afficher en cas d'erreur
+// 	Object Strings Errors
 const errorMessages = {
 	firstName:
 		'Veuillez entrer 2 caractères alphabétiques ou plus pour le champ du Prénom.',
@@ -85,14 +85,14 @@ let regexTournament = new RegExp('^(?:[0-9]|[1-9][0-9])$');
 let regexName = new RegExp('^[a-zA-Zéë-]{2,}$');
 
 /**********************FUNCTIONS********************/
-/*****************Form functionnalities****************/
-// Function for empty field or <2 caracters
+
+// Function to validate field Date >16yo
 
 const validateFieldBirhDate = (field, errorElement, errorMessage) => {
 	let birthDateUser = new Date(field.value);
 	let currentDate = new Date();
 	let ageUser = currentDate.getFullYear() - birthDateUser.getFullYear();
-	if (ageUser < 16) {
+	if (!field.value || ageUser < 16) {
 		errorElement.textContent = errorMessage;
 		field.style.border = '2px solid #FB4D60';
 	} else {
@@ -100,7 +100,7 @@ const validateFieldBirhDate = (field, errorElement, errorMessage) => {
 	}
 };
 
-// Function for Regex validation
+// Function for regex
 const validateFieldRegex = (field, errorElement, errorMessage, regex) => {
 	if (!regex.test(field.value)) {
 		errorElement.textContent = errorMessage;
@@ -110,7 +110,7 @@ const validateFieldRegex = (field, errorElement, errorMessage, regex) => {
 	}
 };
 
-// Function for radioInput
+// Function radioInputCity
 const validateRadioInputCity = (radioInputCity, errorElement, errorMessage) => {
 	let isChecked = false;
 	for (let i = 0; i < radioInputCity.length; i++) {
@@ -132,10 +132,10 @@ const validateFieldCheckbox1 = (checkbox, errorElement, errorMessage) => {
 		errorElement.textContent = '';
 	}
 };
-// Appel de chaque fonction lors du Submit du formulaire
+// Function call to submit form
 const form = document.querySelector('form');
 form.addEventListener('submit', event => {
-	// On empêche le comportement par défaut / recharger la page
+	// Avoid reloading form
 	event.preventDefault();
 	validateFieldRegex(
 		firstName,
@@ -173,7 +173,7 @@ form.addEventListener('submit', event => {
 		!radioInputCityError.textContent &&
 		!checkbox1Error.textContent
 	) {
-		// Afficher l'alerte Votre réservation a été reçue.
+		//Launch modalValidation "Votre réservation a été reçue."
 		closeModal();
 		launchModalValidation();
 	}

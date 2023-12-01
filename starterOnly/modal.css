@@ -578,8 +578,8 @@ footer {
 		margin-top: 20px;
 	}
 	.bground-validation {
-		margin: -770px auto;
-		width: 500px;
+		margin: -72% auto;
+		width: 400px;
 		height: 720px;
 	}
 	.bground-validation h1 {
@@ -667,15 +667,15 @@ footer {
 		margin-top: -15px;
 	}
 	img {
-		width: 40%;
-		margin-top: 10px;
+		width: 55%;
+		margin-top: 17px;
 	}
 	.fa {
 		margin-top: 10px;
 	}
 	.bground-validation {
-		margin: -200% auto;
-		width: 324px;
+		margin: -200% -9%;
+		width: 376px;
 	}
 	/* .modal-body {
 		padding: 0;
