@@ -1,3 +1,6 @@
+// Si la classe actuelle est "topnav", la classe "responsive" est ajoutée, et sinon,
+// la classe est rétablie à "topnav",
+
 function editNav() {
 	var x = document.getElementById('myTopnav');
 	if (x.className === 'topnav') {
@@ -23,8 +26,6 @@ const checkbox1 = document.getElementById('checkbox1');
 let radioInputCity = document.querySelectorAll('input[name="location"]');
 const birthDate = document.getElementById('birthDate');
 const bgroundValidation = document.querySelector('.bground-validation');
-// const radioInputCity = document.getElementsByName('location');
-// const bgroundValidation = document.getElementById('bground-validation');
 
 // DOM Error Elements
 const firstNameError = document.getElementById('firstNameError');
@@ -35,37 +36,41 @@ const tournamentNumberError = document.getElementById('tournamentNumberError');
 const radioInputCityError = document.getElementById('radioInputCityError');
 const checkbox1Error = document.getElementById('checkbox1Error');
 
-// launch modal event
+/***************  LAUNCH MODALS ***************/
+
+// Event click on "Je m'inscris"
 modalBtn.forEach(btn => btn.addEventListener('click', launchModal));
 
-// launch modal form
+// Launch Form
 function launchModal() {
 	modalbg.style.display = 'block';
 }
-// Close modal form
+// Launch Validation
+const launchModalValidation = () => {
+	bgroundValidation.style.display = 'block';
+};
+/***************  CLOSE MODALS ***************/
+
+// Form
 const closeModal = () => {
 	modalbg.style.display = 'none';
 };
-// Close modal validation
-const closeModalValidation = () => {
-	bgroundValidation.style.display = 'none';
-};
-// Close modal input
+// Validation
+// const closeModalValidation = () => {
+// 	bgroundValidation.style.display = 'none';
+// };
+// Input Modal
 const closeModalInput = () => {
 	bgroundValidation.style.display = 'none';
 	window.location.reload();
 };
-// Close modal event
+// Event
 modalCLoseButton.addEventListener('click', closeModal);
 
-// Close modal Validation
-modalCloseButtonValidation.addEventListener('click', closeModalValidation);
+// Event Validation
+// modalCloseButtonValidation.addEventListener('click', closeModalValidation);
 modalCloseInputValidation.addEventListener('click', closeModalInput);
 
-// Send confirmation form is OK
-const launchModalValidation = () => {
-	bgroundValidation.style.display = 'block';
-};
 // 	Object Strings Errors
 const errorMessages = {
 	firstName:
@@ -84,7 +89,7 @@ let regexMail = new RegExp('[a-z0-9._-]+@[a-z0-9._-]+\\.[a-z0-9._-]+');
 let regexTournament = new RegExp('^(?:[0-9]|[1-9][0-9])$');
 let regexName = new RegExp('^[a-zA-Zéë-]{2,}$');
 
-/**********************FUNCTIONS********************/
+/********************** FORM FUNCTIONS********************/
 
 // Function to validate field Date >16yo
 
@@ -100,7 +105,7 @@ const validateFieldBirhDate = (field, errorElement, errorMessage) => {
 	}
 };
 
-// Function for regex
+// Function with regex
 const validateFieldRegex = (field, errorElement, errorMessage, regex) => {
 	if (!regex.test(field.value)) {
 		errorElement.textContent = errorMessage;
@@ -132,7 +137,7 @@ const validateFieldCheckbox1 = (checkbox, errorElement, errorMessage) => {
 		errorElement.textContent = '';
 	}
 };
-// Function call to submit form
+// FUNCTION CALLED TO SUBMIT FORM
 const form = document.querySelector('form');
 form.addEventListener('submit', event => {
 	// Avoid reloading form
