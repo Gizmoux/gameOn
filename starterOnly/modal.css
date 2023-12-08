@@ -175,7 +175,6 @@ main {
 }
 
 .bground-validation {
-	position: relative;
 	display: none;
 	z-index: 1;
 	animation-name: modalopen;
@@ -187,7 +186,10 @@ main {
 	color: #fff;
 	height: 720px;
 	justify-content: center;
-	margin: -62% 0% 0% 35%;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	padding-top: 10px;
 }
 .bground-validation h1 {
@@ -577,26 +579,29 @@ footer {
 		text-align: left;
 		margin-top: 20px;
 	}
-	.bground-validation {
-		margin: -72% auto;
-		width: 400px;
-		height: 720px;
-	}
+
 	.bground-validation h1 {
 		font-size: 36px;
 		margin-top: 60%;
 	}
-	/* .modal-validation-inscription {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		justify-content: flex-end;
-		height: 715px;
-	} */
-	/* img {
-		width: 90%;
-	} */
+	.bground-validation {
+		display: none;
+		z-index: 1;
+		animation-name: modalopen;
+		animation-duration: var(--modal-duration);
+		background: #232323;
+		width: 500px;
+		border-radius: 10px;
+		overflow: hidden;
+		color: #fff;
+		height: 720px;
+		justify-content: center;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding-top: 10px;
+	}
 }
 /********************* RESPONSIVE MOBILE *********************/
 @media screen and (max-width: 767px) {
@@ -673,10 +678,7 @@ footer {
 	.fa {
 		margin-top: 10px;
 	}
-	.bground-validation {
-		margin: -200% -9%;
-		width: 376px;
-	}
+
 	/* .modal-body {
 		padding: 0;
 		margin: 0;
@@ -686,18 +688,24 @@ footer {
 		font-size: 36px;
 		margin-top: 90%;
 	}
-	/* .modal-validation-inscription {
-		max-width: 500px;
-		padding: 15px 8%;
-		margin: 15px auto;
+	.bground-validation {
+		display: none;
+		z-index: 1;
+		animation-name: modalopen;
+		animation-duration: var(--modal-duration);
+		background: #232323;
+		width: 500px;
+		border-radius: 10px;
+		overflow: hidden;
+		color: #fff;
+		height: 720px;
+		justify-content: center;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding-top: 10px;
 	}
-	.content.bground-validation {
-		margin: -200% 0px;
-		height: 154vh;
-		width: 118%;
-		margin-left: -28px;
-		
-	} */
 }
 
 @keyframes modalopen {

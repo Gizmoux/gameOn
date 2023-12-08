@@ -56,9 +56,9 @@ const closeModal = () => {
 	modalbg.style.display = 'none';
 };
 // Validation
-// const closeModalValidation = () => {
-// 	bgroundValidation.style.display = 'none';
-// };
+const closeModalValidation = () => {
+	bgroundValidation.style.display = 'none';
+};
 // Input Modal
 const closeModalInput = () => {
 	bgroundValidation.style.display = 'none';
@@ -68,7 +68,7 @@ const closeModalInput = () => {
 modalCLoseButton.addEventListener('click', closeModal);
 
 // Event Validation
-// modalCloseButtonValidation.addEventListener('click', closeModalValidation);
+modalCloseButtonValidation.addEventListener('click', closeModalValidation);
 modalCloseInputValidation.addEventListener('click', closeModalInput);
 
 // 	Object Strings Errors
@@ -102,6 +102,7 @@ const validateFieldBirhDate = (field, errorElement, errorMessage) => {
 		field.style.border = '2px solid #FB4D60';
 	} else {
 		errorElement.textContent = '';
+		field.style.border = '';
 	}
 };
 
@@ -112,6 +113,7 @@ const validateFieldRegex = (field, errorElement, errorMessage, regex) => {
 		field.style.border = '2px solid #FB4D60';
 	} else {
 		errorElement.textContent = '';
+		field.style.border = '';
 	}
 };
 
